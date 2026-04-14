@@ -27,6 +27,8 @@ app.add_middleware(
 ##
 def nfe_data():
     pass
+    # root = tree.getroot()
+    # ns = {"nfe": "http://www.portalfiscal.inf.br/nfe"}
 
     # numero = root.find(".//nfe:nNF", ns)
     # valor = root.find(".//nfe:vNF", ns)
