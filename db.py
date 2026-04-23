@@ -44,6 +44,7 @@ class Banco_dados:
             
             cursor.close()
 
+    ##ações do gui para salvar no banco de dados
     def inserir_nota(self, nota):
         try:
             with self.conectar() as con:
@@ -69,6 +70,8 @@ class Banco_dados:
         except Exception as e:
             print(f"Erro ao salvar produto: {e}")
             return False
+        
+    
 
 
 db = Banco_dados()
