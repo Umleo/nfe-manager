@@ -1,20 +1,22 @@
+import type { Nfe } from "../types/nfe";
+
 export default function DataNfe({
   setIdElemento,
   setModalOpen,
   modalOpen,
   data,
 }: {
-  setIdElemento: React.Dispatch<React.SetStateAction<string>>;
+  setIdElemento: React.Dispatch<React.SetStateAction<string | null>>;
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   modalOpen: boolean;
-  data: any;
+  data: Nfe[];
 }) {
-  function trataData(data) {
-    const partes = data.split("-");
+  function trataData(dataValue: string) {
+    const partes = dataValue.split("-");
     return `${partes[2]}-${partes[1]}-${partes[0]}`;
   }
 
-  function toggleModal(id) {
+  function toggleModal(id: string) {
     setModalOpen(!modalOpen);
     setIdElemento(id);
   }
@@ -25,18 +27,18 @@ export default function DataNfe({
         data.map((nfe, index) => {
           return (
             <tbody key={index}>
-              <tr>
-                <td className="border px-4">{nfe.razao_social}</td>
-                <td className="border p-2 text-center">{nfe.numero}</td>
-                <td className="border p-2 text-center">
+              <tr className="border-b border-neutral-200 text-neutral-700 transition hover:bg-neutral-50">
+                <td className="px-4 py-3 text-sm">{nfe.razao_social}</td>
+                <td className="p-2 text-center text-sm">{nfe.numero}</td>
+                <td className="p-2 text-center text-sm">
                   {trataData(nfe.data_dia)}
                 </td>
-                <td>
+                <td className="p-2">
                   <button
-                    className="cursor-pointer border bg-amber-200 flex m-auto"
+                    className="m-auto flex cursor-pointer rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-200"
                     onClick={() => toggleModal(nfe.chave)}
                   >
-                    teste
+                    Ver detalhes
                   </button>
                 </td>
               </tr>
@@ -46,7 +48,10 @@ export default function DataNfe({
       ) : (
         <tbody>
           <tr>
-            <td className="text-center" colSpan={4}>
+            <td
+              className="p-6 text-center text-sm text-neutral-500"
+              colSpan={4}
+            >
               Nenhum resultado encontrado.
             </td>
           </tr>

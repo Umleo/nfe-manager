@@ -44,9 +44,9 @@ export default function InputFiltro({
     }
   }
   return (
-    <div className="flex flex-row justify-center w-full overflow-x-auto">
+    <div className="flex w-full flex-col items-stretch justify-center gap-3 overflow-x-auto md:flex-row md:items-center">
       <select
-        className="border rounded-sm py-2 px-4 shrink-0"
+        className="shrink-0 rounded-xl border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-200"
         value={tipoFiltro}
         onChange={(e) => setTipoFiltro(e.target.value)}
       >
@@ -56,15 +56,15 @@ export default function InputFiltro({
       </select>
 
       {tipoFiltro === "Data" ? (
-        <div className="flex flex-row flex-nowrap items-center m-2 gap-2 shrink-0">
+        <div className="flex flex-row flex-nowrap items-center gap-2 shrink-0">
           <input
-            className="border rounded-sm px-2 py-1 text-center"
+            className="rounded-xl border border-neutral-300 px-3 py-2 text-center text-sm text-neutral-700 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-200"
             type="date"
             placeholder={`Buscar por ${tipoFiltro.toLowerCase()}...`}
             onChange={(e) => setDataInicial(e.target.value)}
           />
           <input
-            className="border rounded-sm px-2 py-1 text-center"
+            className="rounded-xl border border-neutral-300 px-3 py-2 text-center text-sm text-neutral-700 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-200"
             type="date"
             placeholder={`Buscar por ${tipoFiltro.toLowerCase()}...`}
             onChange={(e) => setDataFinal(e.target.value)}
@@ -72,7 +72,7 @@ export default function InputFiltro({
         </div>
       ) : (
         <input
-          className="border rounded-sm flex-1 min-w-0 m-2 text-center"
+          className="min-w-0 flex-1 rounded-xl border border-neutral-300 px-4 py-2 text-center text-sm text-neutral-700 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-200"
           type="text"
           placeholder={`Buscar por ${tipoFiltro.toLowerCase()}...`}
           value={dado}
@@ -81,7 +81,7 @@ export default function InputFiltro({
       )}
 
       <button
-        className="border bg-blue-500 text-white py-2 px-4 rounded-sm cursor-pointer shrink-0"
+        className="shrink-0 cursor-pointer rounded-xl border border-blue-300 bg-blue-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200"
         onClick={() => redirect()}
       >
         Buscar
