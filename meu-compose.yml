@@ -13,7 +13,7 @@ services:
     image: meu-front:latest
     container_name: meu-front
     ports:
-      - "3000:80"
+      - "3003:80"
     depends_on:
       - api
     networks:
