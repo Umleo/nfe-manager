@@ -2,6 +2,8 @@
 
 O **NFe Manager** permite armazenar informações de Notas Fiscais Eletrônicas (NF-e), possuindo métodos de consulta práticos. O sistema permite a importação de dados diretamente de arquivos XML, armazenamento local em SQLite e uma interface web para consulta das notas e seus respectivos itens.
 
+---
+
 ## Tecnologias Utilizadas
 
 - **Frontend:** React.js, TypeScript e Tailwind CSS.
@@ -9,8 +11,6 @@ O **NFe Manager** permite armazenar informações de Notas Fiscais Eletrônicas 
 - **Banco de Dados:** SQLite.
 - **Containerização:** Docker e Nginx.
 - **Ingestão de Dados:** Script Python com interface gráfica (Tkinter/GUI).
-
----
 
 ## Estrutura do Projeto
 
@@ -42,7 +42,6 @@ O banco local possui duas tabelas relacionadas:
 
 Para construir as imagens e colocar a aplicação no ar, utilize o arquivo `meu-compose.yml` através do script de automação:
 
-```bash
 chmod +x nfe-up.sh
 ./nfe-up.sh
 
@@ -65,12 +64,10 @@ Para utilizar a aplicação, acesse através do navegador:
 
 Abaixo estão listadas as rotas disponíveis para consulta e gerenciamento das notas fiscais:
 
-| Método | Endpoint | Descrição |
-| :--- | :--- | :--- |
-| **GET** | `/nfe` | Lista todas as notas cadastradas. |
-| **GET** | `/nfe/razao-social/{query}` | Busca notas por Razão Social. |
-| **GET** | `/nfe/numero/{query}` | Busca notas pelo número da nota. |
-| **GET** | `/nfe/data/{intervalo}` | Busca notas em um intervalo de data específico. |
-| **DELETE** | `/nfe/{id}` | Remove uma nota e todos os seus produtos vinculados. |
-
-```
+| Método     | Endpoint                    | Descrição                                            |
+| :--------- | :-------------------------- | :--------------------------------------------------- |
+| **GET**    | `/nfe`                      | Lista todas as notas cadastradas.                    |
+| **GET**    | `/nfe/razao-social/{query}` | Busca notas por Razão Social.                        |
+| **GET**    | `/nfe/numero/{query}`       | Busca notas pelo número da nota.                     |
+| **GET**    | `/nfe/data/{intervalo}`     | Busca notas em um intervalo de data específico.      |
+| **DELETE** | `/nfe/{id}`                 | Remove uma nota e todos os seus produtos vinculados. |
