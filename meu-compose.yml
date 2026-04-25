@@ -1,6 +1,8 @@
 services:
   api:
     image: minha-api:latest
+    volumes:
+      - ./backend/nfe.db:/app/nfe.db
     container_name: minha-api
     ports:
       - "5111:5111"

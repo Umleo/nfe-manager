@@ -1,6 +1,6 @@
 from db import Banco_dados    # Importa o módulo de banco de dados
 
-meu_db = Banco_dados() # Cria uma instância do banco de dados
+meu_db = Banco_dados('nfe.db') # Cria uma instância do banco de dados
 
 def nota_completa(notas, produtos):
     #lista com notas e seus produtos

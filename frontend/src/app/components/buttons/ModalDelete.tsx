@@ -1,4 +1,4 @@
-//import axios from "axios";
+import axios from "axios";
 
 export function ModalDelete({
   elementoId,
@@ -9,7 +9,7 @@ export function ModalDelete({
 }) {
   const deleteElemento = async () => {
     try {
-      //   await axios.delete(`http://localhost:5111/nfe/${elementoId}`);
+      await axios.delete(`http://localhost:5111/nfe/${elementoId}`);
       console.log("Excluindo elemento com ID:", elementoId);
     } catch (error) {
       console.error("Erro ao excluir o elemento:", error);

@@ -6,8 +6,14 @@ import xml.etree.ElementTree as ET   # Importa ElementTree para ler arquivos XML
 import re #regex
 from backend.db import Banco_dados    # Importa o módulo de banco de dados
 
-meu_db = Banco_dados() # Cria uma instância do banco de dados
+meu_db = Banco_dados("backend/nfe.db") # Cria uma instância do banco de dados
 
+db_path = Path("backend/nfe.db")
+if db_path.exists():
+    pass
+else:
+    meu_db.criar_tabelas()
+    
 home = Path.home()  # Obtém o diretório home do usuário
 
 def selecionar_arquivo():            # Define a função que será executada ao clicar no botão.

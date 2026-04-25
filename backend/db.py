@@ -2,7 +2,7 @@ import sqlite3
 
 class Banco_dados:
     ##iniciando o banco
-    def __init__(self, nome_banco='nfe.db'):
+    def __init__(self, nome_banco):
         self.banco = nome_banco
         self.criar_tabelas()
 
@@ -74,5 +74,5 @@ class Banco_dados:
     
 
 
-db = Banco_dados()
-db.criar_tabelas()
+##db = Banco_dados()
+##db.criar_tabelas()
