@@ -1,0 +1,22 @@
+services:
+  api:
+    image: minha-api:latest
+    container_name: minha-api
+    ports:
+      - "5111:5111"
+    networks:
+      - app-network
+
+  front:
+    image: meu-front:latest
+    container_name: meu-front
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

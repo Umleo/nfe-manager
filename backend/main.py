@@ -11,7 +11,7 @@ app = FastAPI()
 ##cors
 origins = [
     "http://localhost:5173",  # React (Vite) for dev
-    "http://localhost:8083" #Nginx
+    "http://localhost:3000" #Nginx
 ]
 
 app.add_middleware(

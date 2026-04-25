@@ -4,7 +4,7 @@ from tkinter import messagebox       # Importa caixas de mensagem (erro, aviso, 
 from pathlib import Path             # Importa Path para manipular caminhos
 import xml.etree.ElementTree as ET   # Importa ElementTree para ler arquivos XML
 import re #regex
-from db import Banco_dados    # Importa o módulo de banco de dados
+from backend.db import Banco_dados    # Importa o módulo de banco de dados
 
 meu_db = Banco_dados() # Cria uma instância do banco de dados
 
