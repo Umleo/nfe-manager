@@ -11,6 +11,8 @@ export function ModalDelete({
     try {
       await axios.delete(`http://localhost:5111/nfe/${elementoId}`);
       console.log("Excluindo elemento com ID:", elementoId);
+      setModalDelete(false);
+      window.location.reload();
     } catch (error) {
       console.error("Erro ao excluir o elemento:", error);
     }

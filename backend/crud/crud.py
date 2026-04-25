@@ -55,6 +55,7 @@ async def crud_delete(chave: str):
         cursor = conexao.cursor()
         #execução sql
         cursor.execute("DELETE FROM notas WHERE chave = ?", (chave,))
+        cursor.execute("DELETE FROM produtos WHERE chave_nota = ?", (chave,))
         #salva no banco
         conexao.commit()
         #retorna delete
