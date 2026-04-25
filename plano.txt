@@ -1,0 +1,11 @@
+meu-projeto/
+├── backend/
+│   ├── main.py          # Seu código Python (Flask/FastAPI)
+│   ├── requirements.txt # Dependências do Python
+│   └── Dockerfile       # Instruções para o container do Back
+├── frontend/
+│   ├── src/             # Código React
+│   ├── nginx.conf       # Configuração do Nginx (importante!)
+│   └── Dockerfile       # Instruções para o container do Front (Multi-stage)
+├── data/                # Onde o banco SQLite vai morar no seu PC
+└── docker-compose.yml   # O "maestro" que sobe tudo

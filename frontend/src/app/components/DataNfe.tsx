@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import type { Nfe } from "../types/nfe";
 
 export default function DataNfe({
