@@ -40,7 +40,7 @@ O banco local possui duas tabelas relacionadas:
 
 ### 2. Subindo o Ambiente (Docker)
 
-Para construir as imagens e colocar a aplicação no ar, utilize o comando `docker docker-compose up --build`.
+Para construir as imagens e colocar a aplicação no ar, utilize o comando `docker-compose up --build`.
 
 Este comando constrói as imagens e sobe o compose.
 
