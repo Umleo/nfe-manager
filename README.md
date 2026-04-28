@@ -40,10 +40,7 @@ O banco local possui duas tabelas relacionadas:
 
 ### 2. Subindo o Ambiente (Docker)
 
-Para construir as imagens e colocar a aplicação no ar, utilize o arquivo `meu-compose.yml` através do script de automação:
-
-chmod +x nfe-up.sh
-./nfe-up.sh
+Para construir as imagens e colocar a aplicação no ar, utilize o comando `docker docker-compose up --build`.
 
 Este comando constrói as imagens e sobe o compose.
 
