@@ -44,7 +44,11 @@ Para construir as imagens e colocar a aplicação no ar, utilize o comando `dock
 
 Este comando constrói as imagens e sobe o compose.
 
-## 3. Portas e Acesso
+### 3. Inserindo XMLs
+
+Execute o arquivo gui.py e selecione os arquivos .xml que deseja inserir no sistema.
+
+### 4. Portas e Acesso
 
 - **API**: Responde na porta host `5111`.
 - **Frontend**: Responde na porta host `3003`.
